@@ -228,7 +228,7 @@ var MaterialTable = /*#__PURE__*/ (function (_React$Component) {
     );
     (0, _defineProperty2["default"])(
       (0, _assertThisInitialized2["default"])(_this),
-      "onChangeRowsPerPage",
+      "onRowsPerPageChange",
       function (event) {
         var pageSize = event.target.value;
 
@@ -242,15 +242,15 @@ var MaterialTable = /*#__PURE__*/ (function (_React$Component) {
           query.page = 0;
 
           _this.onQueryChange(query, function () {
-            _this.props.onChangeRowsPerPage &&
-              _this.props.onChangeRowsPerPage(pageSize);
+            _this.props.onRowsPerPageChange &&
+              _this.props.onRowsPerPageChange(pageSize);
           });
         } else {
           _this.dataManager.changeCurrentPage(0);
 
           _this.setState(_this.dataManager.getRenderState(), function () {
-            _this.props.onChangeRowsPerPage &&
-              _this.props.onChangeRowsPerPage(pageSize);
+            _this.props.onRowsPerPageChange &&
+              _this.props.onRowsPerPageChange(pageSize);
           });
         }
       }
@@ -1346,7 +1346,7 @@ var MaterialTable = /*#__PURE__*/ (function (_React$Component) {
                     ? this.state.query.page
                     : currentPage,
                   onPageChange: this.onPageChange,
-                  onChangeRowsPerPage: this.onChangeRowsPerPage,
+                  onRowsPerPageChange: this.onRowsPerPageChange,
                   ActionsComponent: function ActionsComponent(subProps) {
                     return props.options.paginationType === "normal"
                       ? /*#__PURE__*/ React.createElement(

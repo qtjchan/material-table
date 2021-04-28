@@ -427,7 +427,7 @@ var propTypes = {
   onColumnDragged: _propTypes["default"].func,
   onGroupRemoved: _propTypes["default"].func,
   onSelectionChange: _propTypes["default"].func,
-  onChangeRowsPerPage: _propTypes["default"].func,
+  onRowsPerPageChange: _propTypes["default"].func,
   onPageChange: _propTypes["default"].func,
   onChangeColumnHidden: _propTypes["default"].func,
   onOrderChange: _propTypes["default"].func,

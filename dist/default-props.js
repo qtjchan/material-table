@@ -41,7 +41,7 @@ var OverlayLoading = function OverlayLoading(props) {
         display: "table",
         width: "100%",
         height: "100%",
-        backgroundColor: (0, _colorManipulator.fade)(
+        backgroundColor: (0, _colorManipulator.alpha)(
           props.theme.palette.background.paper,
           0.7
         ),
@@ -78,7 +78,7 @@ var OverlayError = function OverlayError(props) {
         display: "table",
         width: "100%",
         height: "100%",
-        backgroundColor: (0, _colorManipulator.fade)(
+        backgroundColor: (0, _colorManipulator.alpha)(
           props.theme.palette.background.paper,
           0.7
         ),

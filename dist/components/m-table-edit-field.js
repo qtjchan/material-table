@@ -63,7 +63,7 @@ var _FormControlLabel = _interopRequireDefault(
 
 var _dateFns = _interopRequireDefault(require("@date-io/date-fns"));
 
-var _pickers = require("@material-ui/pickers");
+var _lab = require("@material-ui/lab");
 
 var _propTypes = _interopRequireDefault(require("prop-types"));
 
@@ -232,14 +232,20 @@ var MTableEditField = /*#__PURE__*/ (function (_React$Component) {
       key: "renderDateField",
       value: function renderDateField() {
         return /*#__PURE__*/ React.createElement(
-          _pickers.MuiPickersUtilsProvider,
+          _lab.LocalizationProvider,
           {
-            utils: _dateFns["default"],
+            dateAdapter: _dateFns["default"],
             locale: this.props.locale,
           },
           /*#__PURE__*/ React.createElement(
-            _pickers.DatePicker,
+            _lab.DatePicker,
             (0, _extends2["default"])({}, this.getProps(), {
+              renderInput: function renderInput(props) {
+                return /*#__PURE__*/ React.createElement(
+                  _TextField["default"],
+                  props
+                );
+              },
               format: "dd.MM.yyyy",
               value: this.props.value || null,
               onChange: this.props.onChange,
@@ -264,15 +270,21 @@ var MTableEditField = /*#__PURE__*/ (function (_React$Component) {
       key: "renderTimeField",
       value: function renderTimeField() {
         return /*#__PURE__*/ React.createElement(
-          _pickers.MuiPickersUtilsProvider,
+          _lab.LocalizationProvider,
           {
-            utils: _dateFns["default"],
+            dateAdapter: _dateFns["default"],
             locale: this.props.locale,
           },
           /*#__PURE__*/ React.createElement(
-            _pickers.TimePicker,
+            _lab.TimePicker,
             (0, _extends2["default"])({}, this.getProps(), {
               format: "HH:mm:ss",
+              renderInput: function renderInput(props) {
+                return /*#__PURE__*/ React.createElement(
+                  _TextField["default"],
+                  props
+                );
+              },
               value: this.props.value || null,
               onChange: this.props.onChange,
               clearable: true,
@@ -296,15 +308,21 @@ var MTableEditField = /*#__PURE__*/ (function (_React$Component) {
       key: "renderDateTimeField",
       value: function renderDateTimeField() {
         return /*#__PURE__*/ React.createElement(
-          _pickers.MuiPickersUtilsProvider,
+          _lab.LocalizationProvider,
           {
-            utils: _dateFns["default"],
+            dateAdapter: _dateFns["default"],
             locale: this.props.locale,
           },
           /*#__PURE__*/ React.createElement(
-            _pickers.DateTimePicker,
+            _lab.DateTimePicker,
             (0, _extends2["default"])({}, this.getProps(), {
               format: "dd.MM.yyyy HH:mm:ss",
+              renderInput: function renderInput(props) {
+                return /*#__PURE__*/ React.createElement(
+                  _TextField["default"],
+                  props
+                );
+              },
               value: this.props.value || null,
               onChange: this.props.onChange,
               clearable: true,
@@ -333,6 +351,7 @@ var MTableEditField = /*#__PURE__*/ (function (_React$Component) {
           _TextField["default"],
           (0, _extends2["default"])({}, this.getProps(), {
             fullWidth: true,
+            variant: "standard",
             style:
               this.props.columnDef.type === "numeric"
                 ? {
@@ -374,6 +393,7 @@ var MTableEditField = /*#__PURE__*/ (function (_React$Component) {
             placeholder:
               this.props.columnDef.editPlaceholder ||
               this.props.columnDef.title,
+            variant: "standard",
             style: {
               float: "right",
             },

@@ -85,7 +85,7 @@ var _Tooltip = _interopRequireDefault(require("@material-ui/core/Tooltip"));
 
 var _dateFns = _interopRequireDefault(require("@date-io/date-fns"));
 
-var _pickers = require("@material-ui/pickers");
+var _lab = require("@material-ui/lab");
 
 function _createSuper(Derived) {
   var hasNativeReflectConstruct = _isNativeReflectConstruct();
@@ -300,6 +300,7 @@ var MTableFilterRow = /*#__PURE__*/ (function (_React$Component) {
 
         var FilterIcon = _this.props.icons.Filter;
         return /*#__PURE__*/ React.createElement(_TextField["default"], {
+          variant: "standard",
           style:
             columnDef.type === "numeric"
               ? {
@@ -348,6 +349,12 @@ var MTableFilterRow = /*#__PURE__*/ (function (_React$Component) {
         };
 
         var pickerProps = {
+          renderInput: function renderInput(props) {
+            return /*#__PURE__*/ React.createElement(
+              _TextField["default"],
+              props
+            );
+          },
           value: columnDef.tableData.filterValue || null,
           onChange: onDateInputChange,
           placeholder: _this.getLocalizedFilterPlaceHolder(columnDef),
@@ -357,25 +364,25 @@ var MTableFilterRow = /*#__PURE__*/ (function (_React$Component) {
 
         if (columnDef.type === "date") {
           dateInputElement = /*#__PURE__*/ React.createElement(
-            _pickers.DatePicker,
+            _lab.DatePicker,
             pickerProps
           );
         } else if (columnDef.type === "datetime") {
           dateInputElement = /*#__PURE__*/ React.createElement(
-            _pickers.DateTimePicker,
+            _lab.DateTimePicker,
             pickerProps
           );
         } else if (columnDef.type === "time") {
           dateInputElement = /*#__PURE__*/ React.createElement(
-            _pickers.TimePicker,
+            _lab.TimePicker,
             pickerProps
           );
         }
 
         return /*#__PURE__*/ React.createElement(
-          _pickers.MuiPickersUtilsProvider,
+          _lab.LocalizationProvider,
           {
-            utils: _dateFns["default"],
+            dateAdapter: _dateFns["default"],
             locale: _this.props.localization.dateTimePickerLocalization,
           },
           dateInputElement
