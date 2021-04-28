@@ -328,10 +328,15 @@ var MTableEditRow = /*#__PURE__*/ (function (_React$Component) {
                         data: data,
                       },
                       function () {
-                        return _this2.props.onBulkEditRowChanged(
-                          _this2.props.data,
-                          data
-                        );
+                        if (
+                          typeof _this2.props.onBulkEditRowChanged ===
+                          "function"
+                        ) {
+                          return _this2.props.onBulkEditRowChanged(
+                            _this2.props.data,
+                            data
+                          );
+                        }
                       }
                     );
                   },
