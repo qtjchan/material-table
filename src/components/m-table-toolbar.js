@@ -17,6 +17,7 @@ import PropTypes, { oneOf } from "prop-types";
 import "jspdf-autotable";
 import * as React from "react";
 import { jsPDF } from "jspdf";
+import fetch from "isomorphic-fetch";
 /* eslint-enable no-unused-vars */
 
 export class MTableToolbar extends React.Component {
@@ -74,7 +75,7 @@ export class MTableToolbar extends React.Component {
       .exportFile();
   };
 
-  defaultExportPdf = () => {
+  defaultExportPdf = async () => {
     if (jsPDF !== null) {
       const [columns, data] = this.getTableData();
 
@@ -87,9 +88,16 @@ export class MTableToolbar extends React.Component {
       const unit = "pt";
       const size = "A4";
       const orientation = "landscape";
-
       const doc = new jsPDF(orientation, unit, size);
-      doc.setFont("notoSansCjk");
+
+      if (this.props.exportPdfFontUrl) {
+        const response = await fetch(this.props.exportPdfFontUrl);
+        const rawFont = await response.text();
+
+        doc.addFileToVFS("customFont.otf", rawFont);
+        doc.addFont("customFont.otf", "customFont", "normal");
+        doc.setFont("customFont");
+      }
       doc.setFontSize(15);
       doc.text(this.props.exportFileName || this.props.title, 40, 40);
       doc.autoTable(content);
@@ -424,6 +432,7 @@ MTableToolbar.propTypes = {
   exportDelimiter: PropTypes.string,
   exportFileName: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
   exportCsv: PropTypes.func,
+  exportPdfFontUrl: PropTypes.string,
   exportPdf: PropTypes.func,
   classes: PropTypes.object,
   searchAutoFocus: PropTypes.bool,

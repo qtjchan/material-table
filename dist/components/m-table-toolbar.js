@@ -13,6 +13,14 @@ var _objectSpread2 = _interopRequireDefault(
   require("@babel/runtime/helpers/objectSpread")
 );
 
+var _regenerator = _interopRequireDefault(
+  require("@babel/runtime/regenerator")
+);
+
+var _asyncToGenerator2 = _interopRequireDefault(
+  require("@babel/runtime/helpers/asyncToGenerator")
+);
+
 var _slicedToArray2 = _interopRequireDefault(
   require("@babel/runtime/helpers/slicedToArray")
 );
@@ -90,6 +98,8 @@ require("jspdf-autotable");
 var React = _interopRequireWildcard(require("react"));
 
 var _jspdf = require("jspdf");
+
+var _isomorphicFetch = _interopRequireDefault(require("isomorphic-fetch"));
 
 function _createSuper(Derived) {
   var hasNativeReflectConstruct = _isNativeReflectConstruct();
@@ -208,38 +218,93 @@ var MTableToolbar = /*#__PURE__*/ (function (_React$Component) {
     (0, _defineProperty2["default"])(
       (0, _assertThisInitialized2["default"])(_this),
       "defaultExportPdf",
-      function () {
-        if (_jspdf.jsPDF !== null) {
-          var _this$getTableData3 = _this.getTableData(),
-            _this$getTableData4 = (0, _slicedToArray2["default"])(
-              _this$getTableData3,
-              2
-            ),
-            columns = _this$getTableData4[0],
-            data = _this$getTableData4[1];
+      /*#__PURE__*/ (0, _asyncToGenerator2["default"])(
+        /*#__PURE__*/ _regenerator["default"].mark(function _callee() {
+          var _this$getTableData3,
+            _this$getTableData4,
+            columns,
+            data,
+            content,
+            unit,
+            size,
+            orientation,
+            doc,
+            response,
+            rawFont;
 
-          var content = {
-            startY: 50,
-            head: [
-              columns.map(function (columnDef) {
-                return columnDef.title;
-              }),
-            ],
-            body: data,
-          };
-          var unit = "pt";
-          var size = "A4";
-          var orientation = "landscape";
-          var doc = new _jspdf.jsPDF(orientation, unit, size);
-          doc.setFont("notoSansCjk");
-          doc.setFontSize(15);
-          doc.text(_this.props.exportFileName || _this.props.title, 40, 40);
-          doc.autoTable(content);
-          doc.save(
-            (_this.props.exportFileName || _this.props.title || "data") + ".pdf"
-          );
-        }
-      }
+          return _regenerator["default"].wrap(function _callee$(_context) {
+            while (1) {
+              switch ((_context.prev = _context.next)) {
+                case 0:
+                  if (!(_jspdf.jsPDF !== null)) {
+                    _context.next = 21;
+                    break;
+                  }
+
+                  (_this$getTableData3 = _this.getTableData()),
+                    (_this$getTableData4 = (0, _slicedToArray2["default"])(
+                      _this$getTableData3,
+                      2
+                    )),
+                    (columns = _this$getTableData4[0]),
+                    (data = _this$getTableData4[1]);
+                  content = {
+                    startY: 50,
+                    head: [
+                      columns.map(function (columnDef) {
+                        return columnDef.title;
+                      }),
+                    ],
+                    body: data,
+                  };
+                  unit = "pt";
+                  size = "A4";
+                  orientation = "landscape";
+                  doc = new _jspdf.jsPDF(orientation, unit, size);
+
+                  if (!_this.props.exportPdfFontUrl) {
+                    _context.next = 17;
+                    break;
+                  }
+
+                  _context.next = 10;
+                  return (0, _isomorphicFetch["default"])(
+                    _this.props.exportPdfFontUrl
+                  );
+
+                case 10:
+                  response = _context.sent;
+                  _context.next = 13;
+                  return response.text();
+
+                case 13:
+                  rawFont = _context.sent;
+                  doc.addFileToVFS("customFont.otf", rawFont);
+                  doc.addFont("customFont.otf", "customFont", "normal");
+                  doc.setFont("customFont");
+
+                case 17:
+                  doc.setFontSize(15);
+                  doc.text(
+                    _this.props.exportFileName || _this.props.title,
+                    40,
+                    40
+                  );
+                  doc.autoTable(content);
+                  doc.save(
+                    (_this.props.exportFileName ||
+                      _this.props.title ||
+                      "data") + ".pdf"
+                  );
+
+                case 21:
+                case "end":
+                  return _context.stop();
+              }
+            }
+          }, _callee);
+        })
+      )
     );
     (0, _defineProperty2["default"])(
       (0, _assertThisInitialized2["default"])(_this),
@@ -707,6 +772,7 @@ MTableToolbar.propTypes = {
     _propTypes["default"].func,
   ]),
   exportCsv: _propTypes["default"].func,
+  exportPdfFontUrl: _propTypes["default"].string,
   exportPdf: _propTypes["default"].func,
   classes: _propTypes["default"].object,
   searchAutoFocus: _propTypes["default"].bool,

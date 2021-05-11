@@ -304,6 +304,7 @@ export interface Options<RowData extends object> {
   exportAllData?: boolean;
   exportButton?: boolean;
   exportDelimiter?: string;
+  exportPdfFontUrl?: string;
   exportFileName?:
     | string
     | ((columns: Column<RowData>, data: string[][]) => string);
