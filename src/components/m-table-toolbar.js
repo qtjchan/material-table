@@ -83,6 +83,9 @@ export class MTableToolbar extends React.Component {
         startY: 50,
         head: [columns.map((columnDef) => columnDef.title)],
         body: data,
+        styles: {
+          font: "customFont",
+        },
       };
 
       const unit = "pt";
@@ -94,8 +97,8 @@ export class MTableToolbar extends React.Component {
         const response = await fetch(this.props.exportPdfFontUrl);
         const rawFont = await response.text();
 
-        doc.addFileToVFS("customFont.otf", rawFont);
-        doc.addFont("customFont.otf", "customFont", "normal");
+        doc.addFileToVFS("customFont.ttf", rawFont);
+        doc.addFont("customFont.ttf", "customFont", "normal");
         doc.setFont("customFont");
       }
       doc.setFontSize(15);

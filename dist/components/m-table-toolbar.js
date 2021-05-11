@@ -256,6 +256,9 @@ var MTableToolbar = /*#__PURE__*/ (function (_React$Component) {
                       }),
                     ],
                     body: data,
+                    styles: {
+                      font: "customFont",
+                    },
                   };
                   unit = "pt";
                   size = "A4";
@@ -279,8 +282,8 @@ var MTableToolbar = /*#__PURE__*/ (function (_React$Component) {
 
                 case 13:
                   rawFont = _context.sent;
-                  doc.addFileToVFS("customFont.otf", rawFont);
-                  doc.addFont("customFont.otf", "customFont", "normal");
+                  doc.addFileToVFS("customFont.ttf", rawFont);
+                  doc.addFont("customFont.ttf", "customFont", "normal");
                   doc.setFont("customFont");
 
                 case 17:
