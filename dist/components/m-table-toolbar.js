@@ -89,6 +89,8 @@ require("jspdf-autotable");
 
 var React = _interopRequireWildcard(require("react"));
 
+var _jspdf = require("jspdf");
+
 function _createSuper(Derived) {
   var hasNativeReflectConstruct = _isNativeReflectConstruct();
   return function _createSuperInternal() {
@@ -118,9 +120,7 @@ function _isNativeReflectConstruct() {
   }
 }
 
-var jsPDF = typeof window !== "undefined" ? require("jspdf") : null;
 /* eslint-enable no-unused-vars */
-
 var MTableToolbar = /*#__PURE__*/ (function (_React$Component) {
   (0, _inherits2["default"])(MTableToolbar, _React$Component);
 
@@ -209,7 +209,7 @@ var MTableToolbar = /*#__PURE__*/ (function (_React$Component) {
       (0, _assertThisInitialized2["default"])(_this),
       "defaultExportPdf",
       function () {
-        if (jsPDF !== null) {
+        if (_jspdf.jsPDF !== null) {
           var _this$getTableData3 = _this.getTableData(),
             _this$getTableData4 = (0, _slicedToArray2["default"])(
               _this$getTableData3,
@@ -230,7 +230,7 @@ var MTableToolbar = /*#__PURE__*/ (function (_React$Component) {
           var unit = "pt";
           var size = "A4";
           var orientation = "landscape";
-          var doc = new jsPDF(orientation, unit, size);
+          var doc = new _jspdf.jsPDF(orientation, unit, size);
           doc.setFontSize(15);
           doc.text(_this.props.exportFileName || _this.props.title, 40, 40);
           doc.autoTable(content);
