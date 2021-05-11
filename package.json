@@ -86,8 +86,8 @@
     "fast-deep-equal": "2.0.1",
     "filefy": "0.1.10",
     "isomorphic-fetch": "^3.0.0",
-    "jspdf": "2.1.0",
-    "jspdf-autotable": "3.5.9",
+    "jspdf": "^2.3.1",
+    "jspdf-autotable": "^3.5.14",
     "prop-types": "^15.6.2",
     "react-beautiful-dnd": "^13.0.0",
     "react-double-scrollbar": "0.0.15"
