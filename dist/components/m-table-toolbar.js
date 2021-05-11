@@ -231,6 +231,7 @@ var MTableToolbar = /*#__PURE__*/ (function (_React$Component) {
           var size = "A4";
           var orientation = "landscape";
           var doc = new _jspdf.jsPDF(orientation, unit, size);
+          doc.setFont("Noto Sans CJK JP");
           doc.setFontSize(15);
           doc.text(_this.props.exportFileName || _this.props.title, 40, 40);
           doc.autoTable(content);

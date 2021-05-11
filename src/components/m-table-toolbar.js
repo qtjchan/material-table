@@ -89,6 +89,7 @@ export class MTableToolbar extends React.Component {
       const orientation = "landscape";
 
       const doc = new jsPDF(orientation, unit, size);
+      doc.setFont("Noto Sans CJK JP");
       doc.setFontSize(15);
       doc.text(this.props.exportFileName || this.props.title, 40, 40);
       doc.autoTable(content);
