@@ -349,6 +349,7 @@ var propTypes = {
       _propTypes["default"].func,
     ]),
     exportCsv: _propTypes["default"].func,
+    exportPdfFontUrl: _propTypes["default"].string,
     filtering: _propTypes["default"].bool,
     filterCellStyle: _propTypes["default"].object,
     filterRowStyle: _propTypes["default"].object,
