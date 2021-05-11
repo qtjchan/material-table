@@ -399,6 +399,8 @@ export interface Localization {
     showColumnsAriaLabel?: string;
     exportTitle?: React.ReactNode;
     exportAriaLabel?: string;
+    exportCSVName?: React.ReactNode;
+    exportPDFName?: React.ReactNode;
     exportName?: React.ReactNode;
     searchTooltip?: React.ReactNode;
     searchPlaceholder?: React.ReactNode;
