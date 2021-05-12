@@ -264,7 +264,7 @@ var MTableCell = /*#__PURE__*/ (function (_React$Component) {
               ? currencySetting.locale
               : "en-US",
             {
-              style: "currency",
+              style: "decimal",
               currency:
                 currencySetting.currencyCode !== undefined
                   ? currencySetting.currencyCode

@@ -85,7 +85,7 @@ export default class MTableCell extends React.Component {
       return new Intl.NumberFormat(
         currencySetting.locale !== undefined ? currencySetting.locale : "en-US",
         {
-          style: "currency",
+          style: "decimal",
           currency:
             currencySetting.currencyCode !== undefined
               ? currencySetting.currencyCode
