@@ -613,9 +613,7 @@ var MaterialTable = /*#__PURE__*/ (function (_React$Component) {
             });
           };
 
-          console.log("orgData", _this.state.originalData);
           findSelecteds(_this.state.originalData);
-          console.log("selectedRows", selectedRows);
 
           _this.props.onSelectionChange(selectedRows, dataClicked);
         }

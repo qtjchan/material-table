@@ -637,10 +637,7 @@ export default class MaterialTable extends React.Component {
           }
         });
       };
-
-      console.log("orgData", this.state.originalData);
       findSelecteds(this.state.originalData);
-      console.log("selectedRows", selectedRows);
       this.props.onSelectionChange(selectedRows, dataClicked);
     }
   };

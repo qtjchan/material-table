@@ -215,16 +215,13 @@ export default class DataManager {
   }
 
   changeAllSelected(checked) {
-    console.log("ya");
     let selectedCount = 0;
     if (this.isDataType("group")) {
       const setCheck = (data) => {
         data.forEach((element) => {
           if (element.groups.length > 0) {
-            console.log("group ele", element);
             setCheck(element.groups);
           } else {
-            console.log("group ele", element);
             element.data.forEach((d) => {
               d.tableData.checked = d.tableData.disabled ? false : checked;
               selectedCount++;
@@ -232,10 +229,8 @@ export default class DataManager {
           }
         });
       };
-      console.log("data type group", this.groupedData);
       setCheck(this.groupedData);
     } else {
-      console.log("not data type group", this.searchedData);
       this.searchedData.map((row) => {
         row.tableData.checked = row.tableData.disabled ? false : checked;
         return row;
@@ -244,7 +239,6 @@ export default class DataManager {
     }
 
     this.selectedCount = checked ? selectedCount : 0;
-    console.log("selectedCount", selectedCount);
   }
 
   changeOrder(orderBy, orderDirection) {
