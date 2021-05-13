@@ -509,6 +509,9 @@ class App extends Component {
                   //   },
                   // }}
                   options={{
+                    exportAllData: true,
+                    exportButton: true,
+
                     headerSelectionProps: {
                       color: "primary",
                     },
@@ -592,7 +595,10 @@ class App extends Component {
             </Grid>
             {this.state.text}
             <button
-              onClick={() => this.tableRef.current.onAllSelected(true)}
+              onClick={() => {
+                console.log("y");
+                this.tableRef.current.onAllSelected(true);
+              }}
               style={{ margin: 10 }}
             >
               Select
