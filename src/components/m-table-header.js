@@ -157,9 +157,12 @@ export class MTableHeader extends React.Component {
               this.props.dataCount > 0 &&
               this.props.selectedCount === this.props.dataCount
             }
-            onChange={(event, checked) =>
-              this.props.onAllSelected && this.props.onAllSelected(checked)
-            }
+            onChange={(event) => {
+              if (!this.props.onAllSelected) {
+                return;
+              }
+              this.props.onAllSelected(event.target.checked);
+            }}
             {...this.props.options.headerSelectionProps}
           />
         )}

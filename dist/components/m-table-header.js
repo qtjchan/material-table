@@ -279,11 +279,12 @@ var MTableHeader = /*#__PURE__*/ (function (_React$Component) {
                   checked:
                     this.props.dataCount > 0 &&
                     this.props.selectedCount === this.props.dataCount,
-                  onChange: function onChange(event, checked) {
-                    return (
-                      _this2.props.onAllSelected &&
-                      _this2.props.onAllSelected(checked)
-                    );
+                  onChange: function onChange(event) {
+                    if (!_this2.props.onAllSelected) {
+                      return;
+                    }
+
+                    _this2.props.onAllSelected(event.target.checked);
                   },
                 },
                 this.props.options.headerSelectionProps
