@@ -446,8 +446,14 @@ export default class MaterialTable extends React.Component {
   onEditingApproved = (mode, newData, oldData) => {
     if (mode === "add" && this.props.editable && this.props.editable.onRowAdd) {
       this.setState({ isLoading: true }, () => {
+        const initialEditValues = {};
+        for (const column of this.props.columns) {
+          if (typeof column.initialEditValue !== "undefined") {
+            initialEditValues[column.field] = column.initialEditValue;
+          }
+        }
         this.props.editable
-          .onRowAdd(newData)
+          .onRowAdd({ ...initialEditValues, ...newData })
           .then((result) => {
             this.setState({ isLoading: false, showAddRow: false }, () => {
               if (this.isRemoteData()) {
