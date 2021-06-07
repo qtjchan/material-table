@@ -152,9 +152,14 @@ export default class MTableEditRow extends React.Component {
                   });
                 }}
                 onRowDataChange={(data) => {
-                  this.setState({ data }, () =>
-                    this.props.onBulkEditRowChanged(this.props.data, data)
-                  );
+                  this.setState({ data }, () => {
+                    if (typeof this.props.onBulkEditRowChanged === "function") {
+                      return this.props.onBulkEditRowChanged(
+                        this.props.data,
+                        data
+                      );
+                    }
+                  });
                 }}
               />
             </TableCell>
