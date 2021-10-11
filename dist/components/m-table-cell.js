@@ -51,7 +51,7 @@ var _defineProperty2 = _interopRequireDefault(
 
 var React = _interopRequireWildcard(require("react"));
 
-var _TableCell = _interopRequireDefault(require("@material-ui/core/TableCell"));
+var _TableCell = _interopRequireDefault(require("@mui/material/TableCell"));
 
 var _propTypes = _interopRequireDefault(require("prop-types"));
 

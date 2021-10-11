@@ -37,11 +37,11 @@ var _getPrototypeOf2 = _interopRequireDefault(
   require("@babel/runtime/helpers/getPrototypeOf")
 );
 
-var _TableBody = _interopRequireDefault(require("@material-ui/core/TableBody"));
+var _TableBody = _interopRequireDefault(require("@mui/material/TableBody"));
 
-var _TableCell = _interopRequireDefault(require("@material-ui/core/TableCell"));
+var _TableCell = _interopRequireDefault(require("@mui/material/TableCell"));
 
-var _TableRow = _interopRequireDefault(require("@material-ui/core/TableRow"));
+var _TableRow = _interopRequireDefault(require("@mui/material/TableRow"));
 
 var _propTypes = _interopRequireDefault(require("prop-types"));
 

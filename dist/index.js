@@ -30,9 +30,7 @@ var _propTypes = require("./prop-types");
 
 var _materialTable = _interopRequireDefault(require("./material-table"));
 
-var _withStyles = _interopRequireDefault(
-  require("@material-ui/core/styles/withStyles")
-);
+var _withStyles = _interopRequireDefault(require("@mui/styles/withStyles"));
 
 var _components = require("./components");
 

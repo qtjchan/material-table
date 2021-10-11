@@ -53,19 +53,17 @@ var _defineProperty2 = _interopRequireDefault(
   require("@babel/runtime/helpers/defineProperty")
 );
 
-var _Checkbox = _interopRequireDefault(require("@material-ui/core/Checkbox"));
+var _Checkbox = _interopRequireDefault(require("@mui/material/Checkbox"));
 
-var _TableCell = _interopRequireDefault(require("@material-ui/core/TableCell"));
+var _TableCell = _interopRequireDefault(require("@mui/material/TableCell"));
 
-var _TableRow = _interopRequireDefault(require("@material-ui/core/TableRow"));
+var _TableRow = _interopRequireDefault(require("@mui/material/TableRow"));
 
-var _IconButton = _interopRequireDefault(
-  require("@material-ui/core/IconButton")
-);
+var _IconButton = _interopRequireDefault(require("@mui/material/IconButton"));
 
-var _Icon = _interopRequireDefault(require("@material-ui/core/Icon"));
+var _Icon = _interopRequireDefault(require("@mui/material/Icon"));
 
-var _Tooltip = _interopRequireDefault(require("@material-ui/core/Tooltip"));
+var _Tooltip = _interopRequireDefault(require("@mui/material/Tooltip"));
 
 var _propTypes = _interopRequireDefault(require("prop-types"));
 

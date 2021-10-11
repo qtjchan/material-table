@@ -45,13 +45,11 @@ var _defineProperty2 = _interopRequireDefault(
   require("@babel/runtime/helpers/defineProperty")
 );
 
-var _Toolbar = _interopRequireDefault(require("@material-ui/core/Toolbar"));
+var _Toolbar = _interopRequireDefault(require("@mui/material/Toolbar"));
 
-var _Chip = _interopRequireDefault(require("@material-ui/core/Chip"));
+var _Chip = _interopRequireDefault(require("@mui/material/Chip"));
 
-var _Typography = _interopRequireDefault(
-  require("@material-ui/core/Typography")
-);
+var _Typography = _interopRequireDefault(require("@mui/material/Typography"));
 
 var _propTypes = _interopRequireDefault(require("prop-types"));
 

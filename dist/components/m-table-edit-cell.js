@@ -45,17 +45,15 @@ var React = _interopRequireWildcard(require("react"));
 
 var _propTypes = _interopRequireDefault(require("prop-types"));
 
-var _TableCell = _interopRequireDefault(require("@material-ui/core/TableCell"));
+var _TableCell = _interopRequireDefault(require("@mui/material/TableCell"));
 
 var _CircularProgress = _interopRequireDefault(
-  require("@material-ui/core/CircularProgress")
+  require("@mui/material/CircularProgress")
 );
 
-var _colorManipulator = require("@material-ui/core/styles/colorManipulator");
+var _styles = require("@mui/material/styles");
 
-var _withTheme = _interopRequireDefault(
-  require("@material-ui/core/styles/withTheme")
-);
+var _withTheme = _interopRequireDefault(require("@mui/styles/withTheme"));
 
 var _ = require("..");
 

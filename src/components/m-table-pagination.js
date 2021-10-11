@@ -1,8 +1,8 @@
 /* eslint-disable no-unused-vars */
-import IconButton from "@material-ui/core/IconButton";
-import withStyles from "@material-ui/core/styles/withStyles";
-import Tooltip from "@material-ui/core/Tooltip";
-import Typography from "@material-ui/core/Typography";
+import IconButton from "@mui/material/IconButton";
+import withStyles from "@mui/styles/withStyles";
+import Tooltip from "@mui/material/Tooltip";
+import Typography from "@mui/material/Typography";
 import PropTypes from "prop-types";
 import * as React from "react";
 /* eslint-enable no-unused-vars */
@@ -50,6 +50,7 @@ class MTablePaginationInner extends React.Component {
                 onClick={this.handleFirstPageButtonClick}
                 disabled={page === 0}
                 aria-label={localization.firstAriaLabel}
+                size="large"
               >
                 {theme.direction === "rtl" ? (
                   <this.props.icons.LastPage />
@@ -66,6 +67,7 @@ class MTablePaginationInner extends React.Component {
               onClick={this.handleBackButtonClick}
               disabled={page === 0}
               aria-label={localization.previousAriaLabel}
+              size="large"
             >
               {theme.direction === "rtl" ? (
                 <this.props.icons.NextPage />
@@ -106,6 +108,7 @@ class MTablePaginationInner extends React.Component {
               onClick={this.handleNextButtonClick}
               disabled={page >= Math.ceil(count / rowsPerPage) - 1}
               aria-label={localization.nextAriaLabel}
+              size="large"
             >
               {theme.direction === "rtl" ? (
                 <this.props.icons.PreviousPage />
@@ -122,6 +125,7 @@ class MTablePaginationInner extends React.Component {
                 onClick={this.handleLastPageButtonClick}
                 disabled={page >= Math.ceil(count / rowsPerPage) - 1}
                 aria-label={localization.lastAriaLabel}
+                size="large"
               >
                 {theme.direction === "rtl" ? (
                   <this.props.icons.FirstPage />

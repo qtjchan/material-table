@@ -16,22 +16,22 @@ var _extends2 = _interopRequireDefault(
 var _react = _interopRequireDefault(require("react"));
 
 var _CircularProgress = _interopRequireDefault(
-  require("@material-ui/core/CircularProgress")
+  require("@mui/material/CircularProgress")
 );
 
-var _Icon = _interopRequireDefault(require("@material-ui/core/Icon"));
+var _Icon = _interopRequireDefault(require("@mui/material/Icon"));
 
-var _Paper = _interopRequireDefault(require("@material-ui/core/Paper"));
+var _Paper = _interopRequireDefault(require("@mui/material/Paper"));
 
 var _TablePagination = _interopRequireDefault(
-  require("@material-ui/core/TablePagination")
+  require("@mui/material/TablePagination")
 );
 
 var MComponents = _interopRequireWildcard(require("./components"));
 
 var _propTypes = _interopRequireDefault(require("prop-types"));
 
-var _colorManipulator = require("@material-ui/core/styles/colorManipulator");
+var _styles = require("@mui/material/styles");
 
 var OverlayLoading = function OverlayLoading(props) {
   return /*#__PURE__*/ _react["default"].createElement(
@@ -41,7 +41,7 @@ var OverlayLoading = function OverlayLoading(props) {
         display: "table",
         width: "100%",
         height: "100%",
-        backgroundColor: (0, _colorManipulator.alpha)(
+        backgroundColor: (0, _styles.alpha)(
           props.theme.palette.background.paper,
           0.7
         ),
@@ -78,7 +78,7 @@ var OverlayError = function OverlayError(props) {
         display: "table",
         width: "100%",
         height: "100%",
-        backgroundColor: (0, _colorManipulator.alpha)(
+        backgroundColor: (0, _styles.alpha)(
           props.theme.palette.background.paper,
           0.7
         ),

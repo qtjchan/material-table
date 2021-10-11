@@ -53,39 +53,33 @@ var _defineProperty2 = _interopRequireDefault(
   require("@babel/runtime/helpers/defineProperty")
 );
 
-var _Checkbox = _interopRequireDefault(require("@material-ui/core/Checkbox"));
+var _Checkbox = _interopRequireDefault(require("@mui/material/Checkbox"));
 
 var _FormControlLabel = _interopRequireDefault(
-  require("@material-ui/core/FormControlLabel")
+  require("@mui/material/FormControlLabel")
 );
 
-var _IconButton = _interopRequireDefault(
-  require("@material-ui/core/IconButton")
-);
+var _IconButton = _interopRequireDefault(require("@mui/material/IconButton"));
 
 var _InputAdornment = _interopRequireDefault(
-  require("@material-ui/core/InputAdornment")
+  require("@mui/material/InputAdornment")
 );
 
-var _Menu = _interopRequireDefault(require("@material-ui/core/Menu"));
+var _Menu = _interopRequireDefault(require("@mui/material/Menu"));
 
-var _MenuItem = _interopRequireDefault(require("@material-ui/core/MenuItem"));
+var _MenuItem = _interopRequireDefault(require("@mui/material/MenuItem"));
 
-var _TextField = _interopRequireDefault(require("@material-ui/core/TextField"));
+var _TextField = _interopRequireDefault(require("@mui/material/TextField"));
 
-var _Toolbar = _interopRequireDefault(require("@material-ui/core/Toolbar"));
+var _Toolbar = _interopRequireDefault(require("@mui/material/Toolbar"));
 
-var _Tooltip = _interopRequireDefault(require("@material-ui/core/Tooltip"));
+var _Tooltip = _interopRequireDefault(require("@mui/material/Tooltip"));
 
-var _Typography = _interopRequireDefault(
-  require("@material-ui/core/Typography")
-);
+var _Typography = _interopRequireDefault(require("@mui/material/Typography"));
 
-var _withStyles = _interopRequireDefault(
-  require("@material-ui/core/styles/withStyles")
-);
+var _styles = require("@mui/material/styles");
 
-var _colorManipulator = require("@material-ui/core/styles/colorManipulator");
+var _withStyles = _interopRequireDefault(require("@mui/styles/withStyles"));
 
 var _classnames = _interopRequireDefault(require("classnames"));
 
@@ -402,6 +396,7 @@ var MTableToolbar = /*#__PURE__*/ (function (_React$Component) {
                       return _this2.onSearchChange("");
                     },
                     "aria-label": localization.clearSearchAriaLabel,
+                    size: "large",
                   },
                   /*#__PURE__*/ React.createElement(
                     this.props.icons.ResetSearch,
@@ -456,6 +451,7 @@ var MTableToolbar = /*#__PURE__*/ (function (_React$Component) {
                       });
                     },
                     "aria-label": localization.showColumnsAriaLabel,
+                    size: "large",
                   },
                   /*#__PURE__*/ React.createElement(
                     this.props.icons.ViewColumn,
@@ -547,6 +543,7 @@ var MTableToolbar = /*#__PURE__*/ (function (_React$Component) {
                       });
                     },
                     "aria-label": localization.exportAriaLabel,
+                    size: "large",
                   },
                   /*#__PURE__*/ React.createElement(
                     this.props.icons.Export,
@@ -787,10 +784,10 @@ var styles = function styles(theme) {
       paddingRight: theme.spacing(1),
     },
     highlight:
-      theme.palette.type === "light"
+      theme.palette.mode === "light"
         ? {
             color: theme.palette.secondary.main,
-            backgroundColor: (0, _colorManipulator.lighten)(
+            backgroundColor: (0, _styles.lighten)(
               theme.palette.secondary.light,
               0.85
             ),

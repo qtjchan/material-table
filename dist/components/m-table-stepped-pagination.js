@@ -41,19 +41,15 @@ var _defineProperty2 = _interopRequireDefault(
   require("@babel/runtime/helpers/defineProperty")
 );
 
-var _IconButton = _interopRequireDefault(
-  require("@material-ui/core/IconButton")
-);
+var _IconButton = _interopRequireDefault(require("@mui/material/IconButton"));
 
-var _withStyles = _interopRequireDefault(
-  require("@material-ui/core/styles/withStyles")
-);
+var _withStyles = _interopRequireDefault(require("@mui/styles/withStyles"));
 
-var _Tooltip = _interopRequireDefault(require("@material-ui/core/Tooltip"));
+var _Tooltip = _interopRequireDefault(require("@mui/material/Tooltip"));
 
-var _Hidden = _interopRequireDefault(require("@material-ui/core/Hidden"));
+var _Hidden = _interopRequireDefault(require("@mui/material/Hidden"));
 
-var _Button = _interopRequireDefault(require("@material-ui/core/Button"));
+var _Button = _interopRequireDefault(require("@mui/material/Button"));
 
 var _propTypes = _interopRequireDefault(require("prop-types"));
 
@@ -225,6 +221,7 @@ var MTablePaginationInner = /*#__PURE__*/ (function (_React$Component) {
                     onClick: this.handleFirstPageButtonClick,
                     disabled: page === 0,
                     "aria-label": localization.firstAriaLabel,
+                    size: "large",
                   },
                   theme.direction === "rtl"
                     ? /*#__PURE__*/ React.createElement(
@@ -252,6 +249,7 @@ var MTablePaginationInner = /*#__PURE__*/ (function (_React$Component) {
                   onClick: this.handleBackButtonClick,
                   disabled: page === 0,
                   "aria-label": localization.previousAriaLabel,
+                  size: "large",
                 },
                 /*#__PURE__*/ React.createElement(
                   this.props.icons.PreviousPage,
@@ -263,7 +261,7 @@ var MTablePaginationInner = /*#__PURE__*/ (function (_React$Component) {
           /*#__PURE__*/ React.createElement(
             _Hidden["default"],
             {
-              smDown: true,
+              mdDown: true,
             },
             this.renderPagesButton(pageStart, pageEnd)
           ),
@@ -281,6 +279,7 @@ var MTablePaginationInner = /*#__PURE__*/ (function (_React$Component) {
                   onClick: this.handleNextButtonClick,
                   disabled: page >= maxPages,
                   "aria-label": localization.nextAriaLabel,
+                  size: "large",
                 },
                 /*#__PURE__*/ React.createElement(
                   this.props.icons.NextPage,
@@ -304,6 +303,7 @@ var MTablePaginationInner = /*#__PURE__*/ (function (_React$Component) {
                     onClick: this.handleLastPageButtonClick,
                     disabled: page >= Math.ceil(count / rowsPerPage) - 1,
                     "aria-label": localization.lastAriaLabel,
+                    size: "large",
                   },
                   theme.direction === "rtl"
                     ? /*#__PURE__*/ React.createElement(

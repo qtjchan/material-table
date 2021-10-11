@@ -51,16 +51,14 @@ var _defineProperty2 = _interopRequireDefault(
   require("@babel/runtime/helpers/defineProperty")
 );
 
-var _Table = _interopRequireDefault(require("@material-ui/core/Table"));
+var _Table = _interopRequireDefault(require("@mui/material/Table"));
 
-var _TableFooter = _interopRequireDefault(
-  require("@material-ui/core/TableFooter")
-);
+var _TableFooter = _interopRequireDefault(require("@mui/material/TableFooter"));
 
-var _TableRow = _interopRequireDefault(require("@material-ui/core/TableRow"));
+var _TableRow = _interopRequireDefault(require("@mui/material/TableRow"));
 
 var _LinearProgress = _interopRequireDefault(
-  require("@material-ui/core/LinearProgress")
+  require("@mui/material/LinearProgress")
 );
 
 var _reactDoubleScrollbar = _interopRequireDefault(
@@ -79,7 +77,7 @@ var _debounce = require("debounce");
 
 var _fastDeepEqual = _interopRequireDefault(require("fast-deep-equal"));
 
-var _core = require("@material-ui/core");
+var _withStyles = _interopRequireDefault(require("@mui/styles/withStyles"));
 
 var CommonValues = _interopRequireWildcard(require("./utils/common-values"));
 
@@ -1773,7 +1771,7 @@ var style = function style() {
   };
 };
 
-var ScrollBar = (0, _core.withStyles)(style)(function (_ref) {
+var ScrollBar = (0, _withStyles["default"])(style)(function (_ref) {
   var _double = _ref["double"],
     children = _ref.children,
     classes = _ref.classes;

@@ -1,11 +1,11 @@
 import React from "react";
-import CircularProgress from "@material-ui/core/CircularProgress";
-import Icon from "@material-ui/core/Icon";
-import Paper from "@material-ui/core/Paper";
-import TablePagination from "@material-ui/core/TablePagination";
+import CircularProgress from "@mui/material/CircularProgress";
+import Icon from "@mui/material/Icon";
+import Paper from "@mui/material/Paper";
+import TablePagination from "@mui/material/TablePagination";
 import * as MComponents from "./components";
 import PropTypes from "prop-types";
-import { alpha } from "@material-ui/core/styles/colorManipulator";
+import { alpha } from "@mui/material/styles";
 
 const OverlayLoading = (props) => (
   <div

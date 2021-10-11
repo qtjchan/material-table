@@ -39,31 +39,29 @@ var _getPrototypeOf2 = _interopRequireDefault(
 
 var React = _interopRequireWildcard(require("react"));
 
-var _TextField = _interopRequireDefault(require("@material-ui/core/TextField"));
+var _TextField = _interopRequireDefault(require("@mui/material/TextField"));
 
-var _Checkbox = _interopRequireDefault(require("@material-ui/core/Checkbox"));
+var _Checkbox = _interopRequireDefault(require("@mui/material/Checkbox"));
 
-var _Select = _interopRequireDefault(require("@material-ui/core/Select"));
+var _Select = _interopRequireDefault(require("@mui/material/Select"));
 
-var _MenuItem = _interopRequireDefault(require("@material-ui/core/MenuItem"));
+var _MenuItem = _interopRequireDefault(require("@mui/material/MenuItem"));
 
-var _FormControl = _interopRequireDefault(
-  require("@material-ui/core/FormControl")
-);
+var _FormControl = _interopRequireDefault(require("@mui/material/FormControl"));
 
 var _FormHelperText = _interopRequireDefault(
-  require("@material-ui/core/FormHelperText")
+  require("@mui/material/FormHelperText")
 );
 
-var _FormGroup = _interopRequireDefault(require("@material-ui/core/FormGroup"));
+var _FormGroup = _interopRequireDefault(require("@mui/material/FormGroup"));
 
 var _FormControlLabel = _interopRequireDefault(
-  require("@material-ui/core/FormControlLabel")
+  require("@mui/material/FormControlLabel")
 );
 
 var _dateFns = _interopRequireDefault(require("@date-io/date-fns"));
 
-var _lab = require("@material-ui/lab");
+var _lab = require("@mui/lab");
 
 var _propTypes = _interopRequireDefault(require("prop-types"));
 
